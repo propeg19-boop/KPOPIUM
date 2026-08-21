@@ -235,7 +235,7 @@ body {
 .player-controls {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
 }
 
 .player-controls button {
@@ -244,9 +244,10 @@ body {
   place-items: center;
   border: 0;
   background: transparent;
-  color: rgba(255,255,255,0.75);
+  color: var(--neon-violet);
   cursor: pointer;
   font-size: 13px;
+  transition: color 150ms ease, text-shadow 150ms ease, opacity 150ms ease;
 }
 
 .player-controls button:hover { color: var(--text); }
@@ -257,6 +258,16 @@ body {
   background: var(--neon-violet) !important;
   color: #0a0613 !important;
   box-shadow: 0 0 16px var(--glow);
+}
+
+.ctrl-secondary {
+  font-size: 12px !important;
+  color: rgba(185, 133, 255, 0.45) !important;
+}
+
+.ctrl-secondary.is-active {
+  color: var(--neon-pink) !important;
+  text-shadow: 0 0 10px var(--neon-pink);
 }
 
 .scroll-indicator {
@@ -420,6 +431,14 @@ body {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.queue-list .track-item {
+  cursor: grab;
+}
+
+.queue-list .track-item:active {
+  cursor: grabbing;
 }
 
 .queue-actions {
